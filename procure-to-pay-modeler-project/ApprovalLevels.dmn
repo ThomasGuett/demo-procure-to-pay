@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1jho863" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Web Modeler" exporterVersion="e787c33" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.8.0">
+  <decision id="Decision_0475gyf" name="determine approval level">
+    <decisionTable id="DecisionTable_1f96ofu" hitPolicy="FIRST">
+      <input id="InputClause_0i14z0f" label="purchase price">
+        <inputExpression id="LiteralExpression_0k3iuxk" typeRef="string">
+          <text>purchase_price</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="auto approved" name="auto_approved" typeRef="boolean" />
+      <output id="OutputClause_0eelker" label="approval level" name="approval_level" typeRef="string" />
+      <rule id="DecisionRule_05k3mbh">
+        <inputEntry id="UnaryTests_11ziifv">
+          <text>&lt;500</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_14y3b08">
+          <text>true</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18fuob7">
+          <text>"none"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0jnzg5t">
+        <inputEntry id="UnaryTests_1qnj7r2">
+          <text>[500..5000]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_042dtb8">
+          <text>false</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1q40xp1">
+          <text>"department_head"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0xeyzek">
+        <inputEntry id="UnaryTests_0y3tgei">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0isv29j">
+          <text>false</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12qvk55">
+          <text>"CFO"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="Decision_0475gyf">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

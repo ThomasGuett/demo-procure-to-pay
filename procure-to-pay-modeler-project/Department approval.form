@@ -1,0 +1,84 @@
+{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.8.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "e787c33"
+  },
+  "schemaVersion": 19,
+  "id": "Form_rzycmzf",
+  "components": [
+    {
+      "text": "### {{upper case(department)}} Dep. approval required",
+      "type": "text",
+      "layout": {
+        "row": "Row_0kvzb6a",
+        "columns": null
+      },
+      "id": "Field_0wok9t9"
+    },
+    {
+      "label": "procurement request details",
+      "components": [
+        {
+          "text": "{{requester_name}} requests a {{requested_item}} worth approx. {{purchase_price}}\n",
+          "type": "text",
+          "layout": {
+            "row": "Row_0pdaxdk",
+            "columns": null
+          },
+          "id": "Field_1o8w7mt"
+        }
+      ],
+      "showOutline": true,
+      "type": "group",
+      "layout": {
+        "row": "Row_1obqw42",
+        "columns": null
+      },
+      "id": "Field_0yira8v"
+    },
+    {
+      "label": "Inventory status",
+      "components": [
+        {
+          "text": "###### ai metrics\nmodelCalls: {{agent.context.metrics.modelCalls}} inputToken: {{agent.context.metrics.tokenUsage.inputTokenCount}} outputToken: {{agent.context.metrics.tokenUsage.outputTokenCount}}",
+          "type": "text",
+          "layout": {
+            "row": "Row_05voqx3",
+            "columns": null
+          },
+          "id": "Field_0iywie2"
+        },
+        {
+          "label": "AI inventory response",
+          "type": "textarea",
+          "layout": {
+            "row": "Row_16pclp3",
+            "columns": null
+          },
+          "id": "Field_0bkmw13",
+          "key": "agent.responseText"
+        }
+      ],
+      "showOutline": true,
+      "type": "group",
+      "layout": {
+        "row": "Row_0mjd35u",
+        "columns": null
+      },
+      "id": "Field_1yykqd5"
+    },
+    {
+      "label": "proceed to purchase",
+      "type": "checkbox",
+      "layout": {
+        "row": "Row_02bvl6n",
+        "columns": null
+      },
+      "id": "Field_1o8me6q",
+      "key": "approved"
+    }
+  ],
+  "type": "default"
+}

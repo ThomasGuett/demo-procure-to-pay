@@ -1,0 +1,91 @@
+{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.8.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "e787c33"
+  },
+  "schemaVersion": 19,
+  "id": "approve-payment-0geczgw",
+  "components": [
+    {
+      "text": "#### approve invoice payment",
+      "type": "text",
+      "layout": {
+        "row": "Row_1lhof7e",
+        "columns": null
+      },
+      "id": "Field_01m8caz"
+    },
+    {
+      "label": "IDP extraction",
+      "components": [
+        {
+          "label": "Vendor Name",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_0b33tpd",
+            "columns": null
+          },
+          "id": "Field_0qkgztg",
+          "key": "invoiceExtraction.extractedFields.vendorName",
+          "readonly": true
+        },
+        {
+          "label": "Invoice Number",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_0rkr6b0",
+            "columns": null
+          },
+          "id": "Field_1jogk1x",
+          "key": "invoiceExtraction.extractedFields.invoiceNumber",
+          "readonly": true
+        },
+        {
+          "label": "invoice amount",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_0rkr6b0",
+            "columns": null
+          },
+          "id": "Field_0fhrvrw",
+          "key": "invoiceExtraction.extractedFields.totalAmount",
+          "appearance": {
+            "prefixAdorner": "EUR"
+          },
+          "readonly": true
+        },
+        {
+          "label": "IBAN",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_185m05q",
+            "columns": null
+          },
+          "id": "Field_1vwqbyj",
+          "key": "invoiceExtraction.extractedFields.iban",
+          "readonly": true
+        }
+      ],
+      "showOutline": true,
+      "type": "group",
+      "layout": {
+        "row": "Row_0mu2dhb",
+        "columns": null
+      },
+      "id": "Field_0dmmqx4"
+    },
+    {
+      "label": "Invoice preview",
+      "type": "documentPreview",
+      "layout": {
+        "row": "Row_143d41z",
+        "columns": null
+      },
+      "id": "Field_0obqeht",
+      "dataSource": "=invoice_document"
+    }
+  ],
+  "type": "default"
+}

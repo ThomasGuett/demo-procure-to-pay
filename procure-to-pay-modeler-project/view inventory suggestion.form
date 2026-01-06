@@ -1,0 +1,46 @@
+{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.8.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "e787c33"
+  },
+  "schemaVersion": 19,
+  "id": "view-inventory-suggestion-05mz4az",
+  "components": [
+    {
+      "text": "#### Dear {{requester_name}}, \nplease provide feedback for the inventory search",
+      "type": "text",
+      "layout": {
+        "row": "Row_19jq471",
+        "columns": null
+      },
+      "id": "Field_145h1x5"
+    },
+    {
+      "label": "Inventory suggestion",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0tkkj39",
+        "columns": null
+      },
+      "id": "Field_182aa2c",
+      "key": "inventoryItem"
+    },
+    {
+      "label": "Feedback",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_0wumqij",
+        "columns": null
+      },
+      "id": "Field_161pj80",
+      "key": "humanFeedback",
+      "validate": {
+        "required": true,
+        "minLength": "5"
+      }
+    }
+  ],
+  "type": "default"
+}

@@ -1,0 +1,46 @@
+{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.8.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "e787c33"
+  },
+  "schemaVersion": 19,
+  "id": "reserve-item-in-inventory-11wk6at",
+  "components": [
+    {
+      "label": "item to reserve",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_05p0zbn",
+        "columns": null
+      },
+      "id": "Field_1ny824i",
+      "key": "itemToReserve"
+    },
+    {
+      "label": "Request to reserve Item",
+      "values": [
+        {
+          "label": "item is reserved",
+          "value": "item successfully reserved"
+        },
+        {
+          "label": "item cannot be reserved",
+          "value": "item could not be reserved"
+        }
+      ],
+      "type": "radio",
+      "layout": {
+        "row": "Row_0msz8ue",
+        "columns": null
+      },
+      "id": "Field_03lu3sk",
+      "key": "reservationStatus",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default"
+}
