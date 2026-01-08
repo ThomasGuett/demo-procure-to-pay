@@ -15,7 +15,7 @@ This demo assumes you spin up a self-managed Camunda 8.8 installation via docker
 This demo currently uses *qwen3:latest* as its LLM for the agentic part and *mistral-small3.2:latest* for its IDP part, this can be modified within the CheckInventory.bpmn files agentic subprocess model. To start with the demo, I highly recommend to download this model first and serve it with your Ollama installation.
 
 ### Prepare IDP 
-Within your C8 Docker Compose installation, update the connector-secrets.txt with the following entry (this assumes you run ollama at port 11434, please adjust if you are using an alternate open-ai-compatible local provider):
+Within your C8 Docker Compose installation, update the *connector-secrets.txt* with the following entry (this assumes you run ollama at port 11434, please adjust if you are using an alternate open-ai-compatible local provider):
 > IDP_OPENAI_COMPATIBLE_ENDPOINT=http://host.docker.internal:11434/v1/
 > IDP_OPENAI_COMPATIBLE_HEADERS={}
 
