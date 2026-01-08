@@ -6,13 +6,20 @@ This is a demo project designed to highlight on-prem orchestration including age
 ### technical requirements
 Ensure the following components are already installed. This demo was tested using Docker, but podman should work just as well. Regarding Ollama, the demo requires a open-ai compatible local api interface, this worked best with Ollama, I tried to test it with nexa.ai, but unfortunately it didn't work as expected. It could also work with LM Studio or vLLM (but untested).
 - Docker
-- Ollama
+- Ollama or Docker model runner
 
 ### Camunda Process Orchestration
 This demo assumes you spin up a self-managed Camunda 8.8 installation via docker-compose, as outlined here: [Camunda Docker Compose Self-managed guide](https://docs.camunda.io/docs/self-managed/deployment/docker/)
 
 ### Ollama Model download
 This demo currently uses *qwen3:latest* as its LLM for the agentic part and *mistral-small3.2:latest* for its IDP part, this can be modified within the CheckInventory.bpmn files agentic subprocess model. To start with the demo, I highly recommend to download this model first and serve it with your Ollama installation.
+
+### Prepare IDP 
+Within your C8 Docker Compose installation, update the connector-secrets.txt with the following entry (this assumes you run ollama at port 11434, please adjust if you are using an alternate open-ai-compatible local provider):
+> IDP_OPENAI_COMPATIBLE_ENDPOINT=http://host.docker.internal:11434/v1/
+> IDP_OPENAI_COMPATIBLE_HEADERS={}
+
+To test out IDP you should now be able to create a new IDP application, select open-ai-compatible provider (currently limited for unstructured data) and paste the name of a available model e.g. *mistral-small3.2:latest*
 
 ### Prepare Demo setup
 1. Clone this repository and start your Ollama and Camunda installation
